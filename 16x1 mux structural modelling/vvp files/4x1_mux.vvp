@@ -1,0 +1,66 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010D3D70 .scope module, "mux_4x1" "mux_4x1" 2 13;
+ .timescale 0 0;
+v010F11B0_0 .net "in", 3 0, C4<zzzz>; 0 drivers
+v010F0DE8_0 .net "out", 0 0, L_010F6790; 1 drivers
+v010F1208_0 .net "sel", 1 0, C4<zz>; 0 drivers
+v010F1260 .array "t", 0 1;
+v010F1260_0 .net v010F1260 0, 0 0, L_010F5450; 1 drivers
+v010F1260_1 .net v010F1260 1, 0 0, L_010F6688; 1 drivers
+L_010F1310 .part C4<zz>, 1, 1;
+L_010F62E8 .part C4<zzzz>, 0, 1;
+L_010F6188 .part C4<zzzz>, 1, 1;
+L_010F6130 .part C4<zz>, 1, 1;
+L_010F60D8 .part C4<zzzz>, 0, 1;
+L_010F6398 .part C4<zzzz>, 1, 1;
+L_010F64A0 .part C4<zz>, 0, 1;
+S_010D30B0 .scope module, "m1" "mux_2x1" 2 18, 3 1, S_010D3D70;
+ .timescale 0 0;
+L_012735F0 .functor AND 1, L_010F62E8, L_010F12B8, C4<1>, C4<1>;
+L_01273660 .functor AND 1, L_010F6188, L_010F1310, C4<1>, C4<1>;
+L_010F5450 .functor OR 1, L_012735F0, L_01273660, C4<0>, C4<0>;
+v010F0EF0_0 .net *"_s1", 0 0, L_010F12B8; 1 drivers
+v010F0E98_0 .net *"_s2", 0 0, L_012735F0; 1 drivers
+v010F0D38_0 .net *"_s4", 0 0, L_01273660; 1 drivers
+v010F0C30_0 .net "in0", 0 0, L_010F62E8; 1 drivers
+v010F0F48_0 .net "in1", 0 0, L_010F6188; 1 drivers
+v010F1100_0 .alias "out", 0 0, v010F1260_0;
+v010F1158_0 .net "sel", 0 0, L_010F1310; 1 drivers
+L_010F12B8 .reduce/nor L_010F1310;
+S_010D3028 .scope module, "m2" "mux_2x1" 2 19, 3 1, S_010D3D70;
+ .timescale 0 0;
+L_010F65A8 .functor AND 1, L_010F60D8, L_010F6340, C4<1>, C4<1>;
+L_010F6618 .functor AND 1, L_010F6398, L_010F6130, C4<1>, C4<1>;
+L_010F6688 .functor OR 1, L_010F65A8, L_010F6618, C4<0>, C4<0>;
+v010F0CE0_0 .net *"_s1", 0 0, L_010F6340; 1 drivers
+v010F0E40_0 .net *"_s2", 0 0, L_010F65A8; 1 drivers
+v010F0D90_0 .net *"_s4", 0 0, L_010F6618; 1 drivers
+v010F10A8_0 .net "in0", 0 0, L_010F60D8; 1 drivers
+v010F0FA0_0 .net "in1", 0 0, L_010F6398; 1 drivers
+v010F1050_0 .alias "out", 0 0, v010F1260_1;
+v010F1368_0 .net "sel", 0 0, L_010F6130; 1 drivers
+L_010F6340 .reduce/nor L_010F6130;
+S_010D38A8 .scope module, "m3" "mux_2x1" 2 20, 3 1, S_010D3D70;
+ .timescale 0 0;
+L_010F6758 .functor AND 1, L_010F5450, L_010F61E0, C4<1>, C4<1>;
+L_010F6A68 .functor AND 1, L_010F6688, L_010F64A0, C4<1>, C4<1>;
+L_010F6790 .functor OR 1, L_010F6758, L_010F6A68, C4<0>, C4<0>;
+v012745D8_0 .net *"_s1", 0 0, L_010F61E0; 1 drivers
+v01274630_0 .net *"_s2", 0 0, L_010F6758; 1 drivers
+v01274688_0 .net *"_s4", 0 0, L_010F6A68; 1 drivers
+v01273540_0 .alias "in0", 0 0, v010F1260_0;
+v01273598_0 .alias "in1", 0 0, v010F1260_1;
+v010F0FF8_0 .alias "out", 0 0, v010F0DE8_0;
+v010F0C88_0 .net "sel", 0 0, L_010F64A0; 1 drivers
+L_010F61E0 .reduce/nor L_010F64A0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "4x1_mux.v";
+    "2x1_mux.v";
